@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Reactive';
+
+  loginForm = new FormGroup({
+    username: new FormControl('Nirmal'),
+    password: new FormControl('123')
+  })
+  collectData() {
+    console.warn(this.loginForm.value);
+  }
 }
